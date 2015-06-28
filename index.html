@@ -24,7 +24,7 @@
             </button>
             <button type="button" class="btn btn-success btn-lg"><a href="./contact.html">醫院與社福中心聯絡窗口</a>
             </button>
-            
+
             <p>資料來源：<a href="http://doit.gov.taipei/ct.asp?xItem=108880666&ctNode=39067&mp=121001" target="_blank">臺北市資訊局</a>
             </p>
         </div>
@@ -32,6 +32,12 @@
             <span class="glyphicon glyphicon-search"></span>&nbsp;姓名搜尋
             <br>
             <input type="text" placeholder="輸入姓名以進行模糊比對, 例如： 王大仁" ng-model="inputQuery['姓名']" ng-change="fuzzySearch(inputQuery)">
+        </div>
+        <div class="row">
+           <div class="col-md-3">人數：<span class="number">{{dataMembers.length}}</span></div>
+           <div class="col-md-3">重傷：<span class="number">{{(dataMembers | filter:{'救護檢傷': '重傷'}).length}}</span></div>
+           <div class="col-md-3">中傷：<span class="number">{{(dataMembers | filter:{'救護檢傷': '中傷'}).length}}</span></div>
+           <div class="col-md-3">輕傷：<span class="number">{{(dataMembers | filter:{'救護檢傷': '輕傷'}).length}}</span></div>
         </div>
         <table class="table table-hover">
             <thead>

@@ -13,6 +13,10 @@ body {
   color: #FFF;
   text-decoration: none;
 }
+.content .number {
+  font-size: 0.8em;
+  color: #666;
+}
 .content .query input {
   width: 100%;
 }

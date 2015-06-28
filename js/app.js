@@ -15,6 +15,20 @@ angular.module('Controllers', [])
                 $scope.dataMembersSource = arrayOfResults[0].data.source;
                 $scope.dataContactInfo = arrayOfResults[1].data;
 
+
+                $scope.harmSpecies = {
+                    "總人數": arrayOfResults[0].data.data.length,
+                    "重傷": 0,
+                    "中傷": 0,
+                    "輕傷": 0
+                };
+                angular.forEach($scope.dataMembers, function (item, key) {
+                    if ($scope.harmSpecies.indexOf(item["救護檢傷"]) == -1) {
+                        $scope.harmSpecies.push(item["救護檢傷"]);
+                    }
+
+                });
+                console.log($scope.harmSpecies);
                 /*
                 $scope.hospital = [];
 
