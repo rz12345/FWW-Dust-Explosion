@@ -1,0 +1,59 @@
+<!doctype html>
+<html ng-app="app" ng-controller="MainController">
+
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <title>八仙樂園氣爆案送醫名單 - 線上查詢</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>八仙樂園氣爆案送醫名單 - 線上查詢</h1>
+        <p>最後更新時間：{{dataMembersLastModify}}</p>
+    </div>
+    <hr>
+    <div class="content">
+        <div class="bg-info">
+            <button type="button" class="btn btn-primary btn-lg"><a href="./">傷患查詢</a>
+            </button>
+            <button type="button" class="btn btn-success btn-lg"><a href="./contact.html">醫院與社福中心聯絡窗口</a>
+            </button>
+            
+            <p>資料來源：<a href="http://doit.gov.taipei/ct.asp?xItem=108880666&ctNode=39067&mp=121001" target="_blank">臺北市資訊局</a>
+            </p>
+        </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>醫院</th>
+                    <th>社福中心</th>
+                    <th>辦公室電話</th>
+                    <th>主任</th>
+                    <th>主任手機</th>
+                    <th>附註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="i in dataContactInfo">
+                    <td>{{i["醫院"]}}</td>
+                    <td>{{i["社福中心"]}}</td>
+                    <td>{{i["辦公室電話"]}}</td>
+                    <td>{{i["主任"]}}</td>
+                    <td>{{i["主任手機"]}}</td>
+                    <td>{{i["附註"]}}</td>
+                </tr>
+            </tbody>
+        </table>        
+    </div>
+    <hr>
+    <div class="footer">
+    </div>
+</body>
+
+</html>
