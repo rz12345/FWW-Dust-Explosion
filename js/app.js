@@ -13,7 +13,7 @@ angular.module('Controllers', [])
                 $scope.dataMembers = arrayOfResults[0].data.data;
                 $scope.dataMembersLastModify = arrayOfResults[0].data.lastmodify;
                 $scope.dataMembersSource = arrayOfResults[0].data.source;
-                $scope.dataContactInfo = arrayOfResults[1].data;
+                $scope.dataContactInfo = arrayOfResults[1].data.data;
 
 
                 $scope.harmSpecies = {
@@ -22,22 +22,6 @@ angular.module('Controllers', [])
                     "中傷": 0,
                     "輕傷": 0
                 };
-                angular.forEach($scope.dataMembers, function (item, key) {
-                    if ($scope.harmSpecies.indexOf(item["救護檢傷"]) == -1) {
-                        $scope.harmSpecies.push(item["救護檢傷"]);
-                    }
-
-                });
-                console.log($scope.harmSpecies);
-                /*
-                $scope.hospital = [];
-
-                angular.forEach($scope.dataMembers, function (item, key) {
-                    if ($scope.hospital.indexOf(item["收治單位"]) == -1) {
-                        $scope.hospital.push(item["收治單位"]);
-                    }
-                });
-                */
             });
 
             // 模糊搜尋
